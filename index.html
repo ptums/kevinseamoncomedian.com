@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MyApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kevin Seamon - Comedian & Writer</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="resources/css/bootstrap-c.min.css" rel="stylesheet">
+    <link href="resources/css/main.css" rel="stylesheet">
+    <link href="resources/css/full-width-pics.css"  rel="stylesheet">
+    <link href="resources/css/hover.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-sanitize.min.js"></script>
+    <script src="resources/js/vg/videogular.min.js"></script>
+    <script src="resources/js/vg/vg-analytics.min.js"></script>
+    <script src="resources/js/vg/vg-buffering.min.js"></script>
+    <script src="resources/js/vg/vg-controls.min.js"></script>
+    <script src="resources/js/vg/vg-ima-ads.min.js"></script>
+    <script src="resources/js/vg/vg-overlay-play.min.js"></script>
+    <script src="resources/js/vg/vg-poster.min.js"></script>
+    <script src="resources/js/angularfunctions.js"></script>
+  </head>
+  <body>
+
+    <header class="image-bg-fluid-height comedy-title mobile_hide" id="Home" style="margin-top:-50px;">
+      <span class="hvr-pulse-grow"><h1><strong>Kevin Seamon</strong></h1>
+        <h4>Professional Funny Guy & Expert Puller of Fingers</h4></span>
+    </header>
+
+    <!-- Content Section -->
+    <section style="height:180px;">
+        <div class="container" style="margin-top:-50px;">
+            <div class="row" style="margin-right:15px; margin-left:15px;">
+              <div class="col-xs-6 col-md-3  mobile_hide">
+                <img src="img/kevcircle.jpg" class="img-circle" style="position:absolute;" />
+              </div>
+              <div class="col-xs-6 col-md-5 mobile_hide">
+                <h4><em>Poor man want to be rich. Rich man want to be king. And a king ain't satisfied
+till he rules everything</em></h4>
+<p>A creative and hard working chuckle head, Kev is open and willing to perform his brand of
+  humor at any and all venues. No dive is too divey. No mansion is too mansioney. No matter the place. No matter the time. Your buddy Kev got's the cure for what ales ya. </p>
+
+              </div>
+              <div class="col-xs-6 col-md-3 header_menu_items " id="bs-example-navbar-collapse-1">
+                <ul>
+                  <a href="#Talent"><li>Info</li></a>
+                  <a href="#Shows"><li>Dates</li></a>
+                  <a href="#Clips"><li>Stand Up</li></a>
+                  <a href="#Films"><li>Films</li></a>
+                </ul>
+              </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fixed Height Image Aside -->
+    <!-- Image backgrounds are set within the full-width-pics.css file. -->
+    <aside class="image-bg-fixed-height"></aside>
+
+    <!-- Content Section -->
+    <section style="padding:0px !important;">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-6" id="Talent">
+                    <h1>You Can Find Kev At:</h1>
+                    <ul>
+                      <li class="hvr-rotate"><a href="http://stevemarden.net/foolish-thoughts-ep-25-special-edition-comedians-telling-stories/">Foolish Thoughts Podcast with Steve Marden</a></li>
+                      <li class="hvr-skew-backward"><a href="https://www.facebook.com/events/552532778195609/">The Basement Comedy Show</a></li>
+                      <li class="hvr-rotate"><a href="https://www.facebook.com/events/1465152097143712/">Dr. Leonard Goodman's Comedy Tonic</a></li>
+                      <li class="hvr-skew-backward"><a href="https://www.facebook.com/events/1614551008783207/">The Bootleg Comedy Show</a></li>
+                      <li class="hvr-rotate"><a href="https://www.facebook.com/nycomedyclub">The New York Comedy Club</a></li>
+
+                    </ul>
+                      </hr>
+                <div class="social">
+                        <ul>
+                            <li><a href="https://www.facebook.com/profile.php?id=8831883&fref=ts"><i class="fa fa-lg fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/kevinseamon/status/610459169452331008"><i class="fa fa-lg fa-twitter"></i></a></li>
+                            <li><a href="https://www.linkedin.com/pub/kevin-seamon/80/a0b/9bb"><i class="fa fa-lg fa-linkedin"></i></a></li>
+                            <li><a href="https://vimeo.com/user6362616/videos"><i class="fa fa-lg fa-vimeo-square"></i></a></li>
+                            <li><a href="https://vimeo.com/user6362616"><i class="fa fa-lg fa-tumblr"></i></a></li>
+                            <li><a href="https://www.youtube.com/playlist?list=UUPop-jElVuMuFvgWYENPEqA"><i class="fa fa-lg fa-youtube"></i></a></li>
+                        </ul>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                  <h1>Latest Performance</h1>
+                </hr>
+                  <div ng-controller="HomeCtrl as controller">
+                        		<videogular vg-theme="controller.config.theme">
+                        			<vg-media vg-src="controller.config.sources"
+                        					vg-tracks="controller.config.tracks">
+                        			</vg-media>
+                        			<vg-controls>
+                        				<vg-play-pause-button></vg-play-pause-button>
+                        				<vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
+                        				<vg-scrub-bar>
+                        					<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                        				</vg-scrub-bar>
+                        				<vg-time-display>{{ timeLeft | date:'mm:ss' }}</vg-time-display>
+                        				<vg-volume>
+                        					<vg-mute-button></vg-mute-button>
+                        					<vg-volume-bar></vg-volume-bar>
+                        				</vg-volume>
+                        				<vg-fullscreen-button></vg-fullscreen-button>
+                        			</vg-controls>
+                        			<vg-overlay-play></vg-overlay-play>
+                        			<vg-poster vg-url='controller.config.plugins.poster'></vg-poster>
+                        		</videogular>
+	                </div>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+  </br>
+
+      </header>
+      <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>Previous Shows</h3>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Page Features -->
+        <div class="row text-center" ng-controller="PreviousShowSection">
+
+            <div class="col-md-3 col-sm-6 hero-feature" id="Clips" ng-repeat="item in PreviousShows">
+                <ul>
+                  <li>
+                    <div class="caption">
+                      <img src="img/{{item.shortname}}.jpg" class="thumbnail  img-responsive img-center"/>
+                      <h3>{{item.title}}</h3></a>
+                      <p>{{item.date}}</p>
+                        <p>
+                            <a href="{{item.link}}" class="btn btn-default" target="_blank">Watch Here</a>
+                        </p>
+                    </div>
+              </li>
+            </ul>
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+        <hr>
+      </div>
+      <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>Films</h3>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Page Features -->
+        <div class="row text-center" ng-controller="FilmSection">
+
+            <div class="col-md-3 col-sm-6 hero-feature" id="Films" ng-repeat="item in Films">
+                <ul>
+                  <li>
+                    <div class="caption">
+                      <img src="img/{{item.shortname}}.jpg" class="thumbnail  img-responsive img-center"/>
+                      <h3>{{item.title}}</h3></a>
+                      <p>{{item.date}}</p>
+                        <p>
+                            <a href="{{item.link}}" class="btn btn-default" target="_blank">Watch Here</a>
+                        </p>
+                    </div>
+              </li>
+            </ul>
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+        <hr>
+      </div>
+      <div class="container jumbotron">
+
+        <div class="row">
+
+        <header id="Shows">
+          <div class="col-xs-12 col-md-6">
+            <a class="twitter-timeline" href="https://twitter.com/PeterFranc1s/lists/twittersite" data-widget-id="641685585275539456">Tweets from https://twitter.com/PeterFranc1s/lists/twittersite</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          </div>
+          <div class="col-xs-12 col-md-6">
+            <ul>
+              <li><strong></strong> - <em></em></li>
+              <li><strong></strong> - <em></em></li>
+              <li><strong></strong> - <em></em></li>
+              <li><strong></strong> - <em></em></li>
+          </div>
+
+        </div>
+        </div>
+    
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="resources/js/jqueryfunctions.js"></script>
+</html>
